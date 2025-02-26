@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard & Events</title>
+  <link rel="stylesheet" href="user.css">
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome</h1>
+    <div class="top-options">
+      <button id="leaderboard-option">Leaderboard</button>
+      <button id="events-option">Events</button>
+    </div>
+
+    <!-- Leaderboard Section -->
+    <div class="leaderboard-section" id="leaderboard-section" style="display: none;">
+      <h2>Leaderboard</h2>
+      <div class="leaderboard-options">
+        <button id="main-btn">Main Leaderboard</button>
+        <button id="enthu-btn">Enthu Leaderboard</button>
+      </div>
+      <div class="leaderboard" id="leaderboard-display" style="display: none;">
+        <h3 id="leaderboard-title"></h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Department</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <!-- JS will populate this -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Events Section -->
+    <div class="events-section" id="events-section" style="display: none;">
+      <h2>Events</h2>
+      <ul id="events-list">
+        <!-- JS will populate this -->
+      </ul>
+    </div>
+  </div>
+  <script src="user.js"></script>
+</body>
+</html>

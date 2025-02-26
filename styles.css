@@ -1,0 +1,140 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.top-options, .leaderboard-options, .admin-options {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#delete-event-btn {
+    background: #dc3545;
+}
+
+#delete-event-btn:hover {
+    background: #c82333;
+}
+
+.leaderboard-section, .events-section, .admin {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+li {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.admin {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.editor-form {
+    margin-top: 20px;
+}
+
+#enthu-points-inputs div, #event-edit-form, #new-event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#enthu-points-inputs label {
+    text-align: left;
+    font-weight: bold;
+}
+
+#enthu-points-inputs input, #event-edit-form input, #event-edit-form select, 
+#new-event-form input, #new-event-form select {
+    padding: 8px;
+    font-size: 1em;
+}
+
+#event-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+@media (max-width: 600px) {
+    .top-options, .leaderboard-options, .admin-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    button {
+        margin: 0;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead {
+        display: none;
+    }
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+    }
+    td {
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        position: absolute;
+        left: 10px;
+        content: attr(data-label);
+        font-weight: bold;
+    }
+    td:nth-child(1):before { content: "Rank"; }
+    td:nth-child(2):before { content: "Department"; }
+    td:nth-child(3):before { content: "Points"; }
+    ul {
+        grid-template-columns: 1fr;
+    }
+}

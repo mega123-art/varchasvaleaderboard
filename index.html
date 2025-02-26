@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Leaderboard & Enthu Editor</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, Admin</h1>
+    <div class="top-options">
+      <button id="leaderboard-option">Leaderboard</button>
+      <button id="events-option">Events</button>
+      <button id="admin-option">Admin</button>
+    </div>
+    <div class="leaderboard-section" id="leaderboard-section" style="display: none;">
+      <h2>Leaderboard</h2>
+      <div class="leaderboard-options">
+        <button id="main-btn">Main Leaderboard</button>
+        <button id="enthu-btn">Enthu Leaderboard</button>
+      </div>
+      <div class="leaderboard" id="leaderboard-display" style="display: none;">
+        <h3 id="leaderboard-title"></h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Department</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <!-- JS will populate this -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="events-section" id="events-section" style="display: none;">
+      <h2>Events</h2>
+      <ul id="events-list">
+        <!-- JS will populate this -->
+      </ul>
+    </div>
+    <div class="admin" id="admin-section" style="display: none;">
+      <h2>Admin Panel</h2>
+      <div class="admin-options">
+        <button id="edit-enthu-btn">Edit Enthu Leaderboard</button>
+        <button id="edit-events-btn">Edit Events</button>
+        <button id="add-event-btn">Add Event</button>
+      </div>
+      <div class="editor-form" id="enthu-editor-form" style="display: none;">
+        <h3>Edit Enthu Leaderboard Points</h3>
+        <form id="enthu-points-form">
+          <div id="enthu-points-inputs">
+            <!-- JS will populate inputs for each department -->
+          </div>
+          <button type="submit">Save Enthu Points</button>
+        </form>
+      </div>
+      <div class="editor-form" id="add-event-form" style="display: none;">
+        <h3>Add New Event</h3>
+        <form id="new-event-form">
+          <input type="text" id="new-event-name" placeholder="Event Name" required>
+          <input type="date" id="new-event-date" required>
+          <select id="new-leaderboard-type" required>
+            <option value="" disabled selected>Affects Which Leaderboard?</option>
+            <option value="main">Main</option>
+            <option value="enthu">Enthu</option>
+          </select>
+          <select id="new-first-place" required>
+            <option value="" disabled selected>1st Place Department</option>
+            <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MEC">MEC</option>
+            <option value="CHEM MINE">CHEM MINE</option>
+            <option value="META">META</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="ARCHI">ARCHI</option>
+          </select>
+          <input type="number" id="new-first-points" placeholder="Points for 1st" required min="0">
+          <select id="new-second-place" required>
+            <option value="" disabled selected>2nd Place Department</option>
+            <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MEC">MEC</option>
+            <option value="CHEM MINE">CHEM MINE</option>
+            <option value="META">META</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="ARCHI">ARCHI</option>
+          </select>
+          <input type="number" id="new-second-points" placeholder="Points for 2nd" required min="0">
+          <select id="new-third-place" required>
+            <option value="" disabled selected>3rd Place Department</option>
+            <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MEC">MEC</option>
+            <option value="CHEM MINE">CHEM MINE</option>
+            <option value="META">META</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="ARCHI">ARCHI</option>
+          </select>
+          <input type="number" id="new-third-points" placeholder="Points for 3rd" required min="0">
+          <button type="submit">Add Event</button>
+        </form>
+      </div>
+      <div class="editor-form" id="event-editor-form" style="display: none;">
+        <h3>Edit Events</h3>
+        <select id="event-select" required>
+          <option value="" disabled selected>Select an Event to Edit</option>
+          <!-- JS will populate this -->
+        </select>
+        <form id="event-edit-form" style="display: none;">
+          <input type="text" id="edit-event-name" placeholder="Event Name" required>
+          <input type="date" id="edit-event-date" required>
+          <select id="edit-leaderboard-type" required>
+            <option value="" disabled selected>Affects Which Leaderboard?</option>
+            <option value="main">Main</option>
+            <option value="enthu">Enthu</option>
+          </select>
+          <select id="edit-first-place" required>
+            <option value="" disabled selected>1st Place Department</option>
+            <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MEC">MEC</option>
+            <option value="CHEM MINE">CHEM MINE</option>
+            <option value="META">META</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="ARCHI">ARCHI</option>
+          </select>
+          <input type="number" id="edit-first-points" placeholder="Points for 1st" required min="0">
+          <select id="edit-second-place" required>
+            <option value="" disabled selected>2nd Place Department</option>
+            <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MEC">MEC</option>
+            <option value="CHEM MINE">CHEM MINE</option>
+            <option value="META">META</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="ARCHI">ARCHI</option>
+          </select>
+          <input type="number" id="edit-second-points" placeholder="Points for 2nd" required min="0">
+          <select id="edit-third-place" required>
+            <option value="" disabled selected>3rd Place Department</option>
+            <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MEC">MEC</option>
+            <option value="CHEM MINE">CHEM MINE</option>
+            <option value="META">META</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="ARCHI">ARCHI</option>
+          </select>
+          <input type="number" id="edit-third-points" placeholder="Points for 3rd" required min="0">
+          <button type="submit">Save Event Changes</button>
+          <button type="button" id="delete-event-btn">Delete Event</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

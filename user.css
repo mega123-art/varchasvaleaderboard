@@ -1,0 +1,256 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Sleek, modern font */
+    background: linear-gradient(135deg, #1a1a2e, #16213e); /* Dark, seductive gradient */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1000px; /* Wider for a bolder presence */
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Darker, sultry glass effect */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Deep shadow for drama */
+    backdrop-filter: blur(15px); /* Enhanced blur for allure */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle glow border */
+}
+
+/* Header */
+h1 {
+    font-size: 3em; /* Bigger, bolder */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ff007a; /* Hot pink for sexiness */
+    text-shadow: 0 0 15px rgba(255, 0, 122, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.5); /* Neon glow */
+    animation: pulse 2s infinite; /* Pulsing effect */
+}
+
+/* Top Navigation */
+.top-options {
+    margin-bottom: 40px;
+}
+
+.top-options button {
+    padding: 15px 30px; /* Larger for a sultry touch */
+    margin: 0 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff007a, #ff4d94); /* Pink-to-magenta gradient */
+    color: #fff;
+    border: none;
+    border-radius: 30px; /* Curvier edges */
+    transition: all 0.3s ease; /* Smooth everything */
+    box-shadow: 0 5px 15px rgba(255, 0, 122, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.3); /* Glowing shadow */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top-options button:hover {
+    transform: scale(1.1) rotate(2deg); /* Playful tilt and scale */
+    box-shadow: 0 8px 20px rgba(255, 0, 122, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.5);
+    background: linear-gradient(45deg, #ff4d94, #ff007a); /* Reverse gradient */
+}
+
+/* Leaderboard Section */
+.leaderboard-section, .events-section {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05); /* Barely-there backdrop */
+    border-radius: 15px;
+    animation: slideIn 0.6s ease-out; /* Sexy slide-in */
+    border: 1px solid rgba(255, 0, 122, 0.2); /* Pink accent */
+}
+
+h2 {
+    font-size: 2em;
+    color: #00ffcc; /* Neon teal for a hot contrast */
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+    letter-spacing: 1px;
+}
+
+.leaderboard-options {
+    margin-bottom: 25px;
+}
+
+.leaderboard-options button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background: linear-gradient(45deg, #00ffcc, #00b894); /* Teal-to-green gradient */
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 255, 204, 0.4);
+}
+
+.leaderboard-options button:hover {
+    background: linear-gradient(45deg, #00b894, #00ffcc);
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(0, 255, 204, 0.6);
+}
+
+/* Leaderboard Table */
+table {
+    width: 100%;
+    border-collapse: separate; /* Allow rounded corners */
+    border-spacing: 0;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Sheer white */
+    border-radius: 12px;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background: linear-gradient(90deg, #ff007a, #ff4d94); /* Pink header */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05); /* Subtle alternation */
+}
+
+tr:hover {
+    background: rgba(255, 0, 122, 0.2); /* Pink glow on hover */
+    transform: translateX(5px); /* Slight slide */
+    box-shadow: 0 0 10px rgba(255, 0, 122, 0.5);
+}
+
+/* Events Section */
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider, sexier cards */
+    gap: 25px;
+}
+
+li {
+    background: linear-gradient(135deg, #ff4d94, #ff007a, #00ffcc); /* Multi-color seduction */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2); /* Deep shadow + inner glow */
+    transition: all 0.4s ease;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 1.6;
+    position: relative;
+    overflow: hidden;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+li:hover::before {
+    opacity: 1;
+    transform: scale(1.2); /* Radial flare on hover */
+}
+
+li:hover {
+    transform: translateY(-8px) rotate(1deg); /* Sultry lift and tilt */
+    box-shadow: 0 10px 25px rgba(255, 0, 122, 0.6);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { text-shadow: 0 0 15px rgba(255, 0, 122, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.5); }
+    50% { text-shadow: 0 0 25px rgba(255, 0, 122, 1), 2px 2px 8px rgba(0, 0, 0, 0.7); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .top-options, .leaderboard-options {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .top-options button, .leaderboard-options button {
+        margin: 0;
+        width: 80%;
+        max-width: 300px;
+        align-self: center;
+        font-size: 1em;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 20px;
+        border: 1px solid rgba(255, 0, 122, 0.2);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    td {
+        padding: 12px 12px 12px 50%;
+        border-bottom: none;
+    }
+
+    td:before {
+        left: 12px;
+        color: #ff007a;
+        font-weight: 700;
+    }
+
+    td:nth-child(1):before { content: "Rank"; }
+    td:nth-child(2):before { content: "Department"; }
+    td:nth-child(3):before { content: "Points"; }
+
+    ul {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        font-size: 1em;
+        padding: 20px;
+    }
+}

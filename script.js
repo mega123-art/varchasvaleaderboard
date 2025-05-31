@@ -1,12 +1,12 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyCAiwaEP3EiTb2mgfTeOjENIjliinIA6hE",
+    apiKey: "your api here",
     authDomain: "varchasvaleaderboard.firebaseapp.com",
     projectId: "varchasvaleaderboard",
     storageBucket: "varchasvaleaderboard.firebasestorage.app",
-    messagingSenderId: "711369603628",
-    appId: "1:711369603628:web:82881121a316fc1993af89",
-    measurementId: "G-0B6H0G6550"
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
   };
 
 try {
